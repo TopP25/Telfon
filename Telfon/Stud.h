@@ -2,17 +2,17 @@
 #include <iostream>
 #include <string>
 using namespace std;
-class stud
+class Stud
 {
 	string name;
 	int age;
 
 public:
-	stud(string name, int age) {
+	Stud(string name, int age) {
 		this->name = name;
 		this->age = age;
 	}
-	stud() {
+	Stud() {
 		this->name = "Иванов Иван";
 		this->age = 18;
 	}
