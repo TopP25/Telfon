@@ -127,7 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Stud.cpp" />
     <ClCompile Include="Telfon.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -1,32 +1,32 @@
 ﻿
 #include "Stud.h"
-
+#include <vector>
 using namespace std;
 
-class Myclass
+class MyClass
 {
     vector<Stud> studens;
 
 public:
-	MyClass(int i);
-	~MyClass();
+	MyClass(int count) {
 
-private:
+		for (int i = 0; i < count; i++) {
+			studens.push_back(Stud());
+		}
+	}
+	void printStudents() {
+		for (auto s : studens) {
+			cout << "NAme: " << s.getName() << endl;
+			cout << "Age: " << s.getAge() << endl;
+		}
+	}
+	~MyClass() {
 
+	}
 };
 
-MyClass::MyClass(int i)
-{
-}
-
-    while (!file_in.eof())
-    {
-         file_in>>str;
-         cout << str<<' ';
-    }
-    file_in.close(); */
-
-   
-    //hello
-   
+int main(){
+	setlocale(LC_ALL, "rus");
+	MyClass my(6);
+	my.printStudents();
 }
