@@ -8,12 +8,13 @@ using namespace std;
 
 int main()
 {
+    Person p("akshd", 123123,123123,123123,"dasdasd");
     ofstream file_out;
     file_out.open("data.txt");
-    file_out << "Hello Woradasld!";
+    file_out << p.Print();
     file_out.close();
     
-    Person p("akshd", 123123,123123,123123,"dasdasd");
+    
     cout << p.Get_name() << " " << p.Get_telephone()<<endl;
     string str = "";
     ifstream file_in;
