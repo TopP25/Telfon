@@ -131,11 +131,11 @@
     <ClCompile Include="Telfon.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="data.txt" />
-    <Text Include="data1.txt" />
+    <Text Include="Data.txt" />
+    <Text Include="Data1.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stud.h" />
+    <ClInclude Include="Stud.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
