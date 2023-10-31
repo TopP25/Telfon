@@ -2,7 +2,11 @@
 
 #include <iostream>
 #include <fstream>
+using namespace std;
+
 int main()
 {
-    std::cout << "Hello World!\n";
+	ofstream file_out ("Document.txt");
+	file_out << "Hello World";
+	file_out.close();
 }
