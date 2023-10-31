@@ -11,14 +11,14 @@ class MyClass
 	vector<stud> studens;
 
 public:
-	MyClass();
+	MyClass(int i);
 	~MyClass();
 
 private:
 
 };
 
-MyClass::MyClass()
+MyClass::MyClass(int i)
 {
 }
 
