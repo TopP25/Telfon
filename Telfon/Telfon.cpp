@@ -1,14 +1,11 @@
 ﻿
+#include "Stud.h"
 
-#include <iostream>
-#include <fstream>
-#include "stud.h"
-#include <vector>
 using namespace std;
 
-class MyClass
+class Myclass
 {
-	vector<stud> studens;
+    vector<Stud> studens;
 
 public:
 	MyClass(int i);
@@ -22,11 +19,14 @@ MyClass::MyClass(int i)
 {
 }
 
-MyClass::~MyClass()
-{
-}
+    while (!file_in.eof())
+    {
+         file_in>>str;
+         cout << str<<' ';
+    }
+    file_in.close(); */
 
-int main()
-{
-
+   
+    //hello
+   
 }
