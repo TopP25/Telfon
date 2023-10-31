@@ -1,26 +1,36 @@
 #pragma once
 #include <iostream>
+#include <fstream>
 #include <string>
+#include <vector>
 using namespace std;
-class stud
+
+class Stud
 {
 	string name;
 	int age;
 
 public:
-	stud(string name, int age) {
+	Stud(string name, int age)
+	{
 		this->name = name;
 		this->age = age;
+
 	}
-	stud() {
+	Stud()
+	{
 		this->name = "Иванов Иван";
 		this->age = 18;
 	}
-	string getName() {
+	string getname()
+	{
 		return name;
 	}
-	int getAge() {
+	int getage()
+	{
 		return age;
 	}
+
+
 };
 
