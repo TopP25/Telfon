@@ -1,5 +1,5 @@
 
-#include "Header.h"
+#include "Person_class.h"
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -13,7 +13,7 @@ int main()
     file_out << "Hello Woradasld!";
     file_out.close();
     
-    Person p("akshd", 123123);
+    Person p("akshd", 123123,123123,123123,"dasdasd");
     cout << p.Get_name() << " " << p.Get_telephone()<<endl;
     string str = "";
     ifstream file_in;
