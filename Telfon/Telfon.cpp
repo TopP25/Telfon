@@ -1,5 +1,5 @@
 
-
+#include "Header.h"
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -13,7 +13,8 @@ int main()
     file_out << "Hello Woradasld!";
     file_out.close();
     
-    
+    Person p("akshd", 123123);
+    cout << p.Get_name() << " " << p.Get_telephone()<<endl;
     string str = "";
     ifstream file_in;
     file_in.open("data.txt");
