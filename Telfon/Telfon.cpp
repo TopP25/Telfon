@@ -35,7 +35,7 @@ void save()
 {
     string name_of_file;
     cin >> name_of_file;
-    ofstream in;//
+    ofstream in;////
     in.open(name_of_file);
     for (int i = 0; i < index; i++)
     {
