@@ -4,6 +4,7 @@
 #include <fstream>
 using namespace std;
 
+
 Person Array[100]{};
 int index = 0;
 
@@ -43,6 +44,30 @@ void save()
     }
     in.close();
 }
+void Load()
+{
+    string name_of_file;
+    string buf;
+    string buf2;
+    cin >> name_of_file;
+    ifstream out;
+    out.open(name_of_file);
+    
+    while (!out.eof())
+    {
+        out >> buf;
+        buf2 += buf;
+        bool found = buf2.find("|") != std::string::npos;
+        if (found)
+        {
+            cout << buf2 << endl;
+            buf2 = "";
+        }
+        
+    }
+
+    out.close();
+}
 int main()
 {
     //global Array for storaging person's information
@@ -51,11 +76,11 @@ int main()
     
     Person p("akshd", 123123,123123,123123,"dasdasd");
     
-    ofstream file_out;
+    /*ofstream file_out;
     file_out.open("data.txt");
     file_out << p.Print();
     file_out << "fgfgfgfgfgfgfg";
-    file_out.close();
+    file_out.close();*/
     
     
     cout << p.Get_name() << " " << p.Get_telephone()<<endl;
@@ -68,6 +93,8 @@ int main()
         cout << str<< " " << endl;
     }
     file_in.close();
+
+
     system("pause");
     system("cls");
 
@@ -82,6 +109,10 @@ int main()
         if (user_choice == "s")
         {
             save();
+        }
+        if (user_choice == "l")
+        {
+            Load();
         }
     }
 }

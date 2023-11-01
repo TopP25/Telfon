@@ -26,7 +26,7 @@ public:
 	}
 	Person()
 	{
-		Person::name == "undefined";
+		Person::name = "undefined";
 		Person::telephone = 0;
 		Person::workphone = 0;
 		Person::homephone = 0;
