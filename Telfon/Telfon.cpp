@@ -11,9 +11,9 @@ int index = 0;
 void new_person()
 {
     string name1;
-    int t1;
-    int t2;
-    int t3;
+    string t1;
+    string t2;
+    string t3;
     string dop_inf_cin;
     cin >> name1;
     cin >> t1;
@@ -67,7 +67,7 @@ void Load()
         if (found)
         {
             cout << buf2 << endl;
-            Person a(Arr[0], stoi(Arr[1]), stoi(Arr[2]), stoi(Arr[3]), Arr[4]);
+            Person a(Arr[0], Arr[1],Arr[2], Arr[3], Arr[4]);
             Array[index] = a;
             buf2 = "";
             index += 1;
@@ -111,7 +111,7 @@ int main()
             
             for (Person p : Array)
             {
-                if (p.Get_name() == "undefined" && p.Get_telephone() == 0 && p.Get_homephone() == 0 && p.Get_workphone() == 0, p.Get_dop_inf() == "nothing")
+                if (p.Get_name() == "undefined" && p.Get_telephone() == "" && p.Get_homephone() == "" && p.Get_workphone() == "", p.Get_dop_inf() == "nothing")
                 {
                     continue;
                 }

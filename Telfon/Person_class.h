@@ -5,15 +5,15 @@ using namespace std;
 class Person
 {
 	string name;
-	int telephone;
-	int workphone;
-	int homephone;
+	string telephone;
+	string workphone;
+	string homephone;
 	string dop_inf;
 
 	
 
 public:
-	Person(string name1, int telephone1, int workphone1 , int homephone1, string dop_inf1)
+	Person(string name1, string telephone1, string workphone1 , string homephone1, string dop_inf1)
 	{
 		Person::name = name1;
 		Person::telephone = telephone1;
@@ -27,9 +27,9 @@ public:
 	Person()
 	{
 		Person::name = "undefined";
-		Person::telephone = 0;
-		Person::workphone = 0;
-		Person::homephone = 0;
+		Person::telephone = "";
+		Person::workphone ="";
+		Person::homephone = "";
 		Person::dop_inf = "nothing";
 
 	}
@@ -37,15 +37,15 @@ public:
 	{
 		return name;
 	}
-	int Get_telephone()
+	string Get_telephone()
 	{
 		return telephone;
 	}
-	int Get_workphone()
+	string Get_workphone()
 	{
 		return workphone;
 	}
-	int Get_homephone()
+	string Get_homephone()
 	{
 		return homephone;
 	}
@@ -55,6 +55,6 @@ public:
 	}
 	string Print()
 	{
-		return Person::name + " " + to_string(Person::telephone) + " " + to_string(Person::workphone) + " " + to_string(Person::homephone) + " " + Person::dop_inf + " ";
+		return Person::name + " " + Person::telephone + " " + Person::workphone + " " + Person::homephone + " " + Person::dop_inf + " ";
 	}
 };
