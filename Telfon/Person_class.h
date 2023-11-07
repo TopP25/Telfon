@@ -55,6 +55,6 @@ public:
 	}
 	string Print()
 	{
-		return Person::name + " " + to_string(Person::telephone) + " " + to_string(Person::workphone) + " " + to_string(Person::homephone) + " " + Person::dop_inf;
+		return Person::name + " " + to_string(Person::telephone) + " " + to_string(Person::workphone) + " " + to_string(Person::homephone) + " " + Person::dop_inf + " ";
 	}
 };

@@ -20,7 +20,7 @@ void new_person()
     cin >> t2;
     cin >> t3;
     cin >> dop_inf_cin;
-    Person buf(name1,t1,t2,t3,dop_inf_cin+"|");
+    Person buf(name1,t1,t2,t3,dop_inf_cin+"| ");
     Array[index] = buf;
     
 
@@ -52,16 +52,27 @@ void Load()
     cin >> name_of_file;
     ifstream out;
     out.open(name_of_file);
-    
+    int counter = -1;
+    index = 0;
+    string Arr[5]{};
     while (!out.eof())
     {
         out >> buf;
-        buf2 += buf;
-        bool found = buf2.find("|") != std::string::npos;
+        
+        buf2 += (buf+" ");
+        counter += 1;
+        Arr[counter] = buf;
+        bool found = buf.find("|") != std::string::npos;
+        
         if (found)
         {
             cout << buf2 << endl;
+            Person a(Arr[0], stoi(Arr[1]), stoi(Arr[2]), stoi(Arr[3]), Arr[4]);
+            Array[index] = a;
             buf2 = "";
+            index += 1;
+            counter = -1;
+
         }
         
     }
@@ -74,26 +85,7 @@ int main()
  
     //__________________________________________
     
-    Person p("akshd", 123123,123123,123123,"dasdasd");
-    
-    /*ofstream file_out;
-    file_out.open("data.txt");
-    file_out << p.Print();
-    file_out << "fgfgfgfgfgfgfg";
-    file_out.close();*/
-    
-    
-    cout << p.Get_name() << " " << p.Get_telephone()<<endl;
-    string str = "";
-    ifstream file_in;
-    file_in.open("data.txt");
-    while (!file_in.eof())
-    {
-        file_in >> str;
-        cout << str<< " " << endl;
-    }
-    file_in.close();
-
+    cout << "commands:\nload - load information from file (after enter the command, insert a name of file)\n\nnew - new person for telephone book(after enter the command, insert first name, surname and aftername(in one string)\nthen insert all type of phones(mobile work home), and if needed information about person\n\nsave - save information in file (after enter the command, insert a name of file))\n\nprint - printing all persons in telephone book\n" << endl;
 
     system("pause");
     system("cls");
@@ -102,17 +94,29 @@ int main()
     while (user_choice != "yes")
     {
         cin >> user_choice;
-        if (user_choice == "n")
+        if (user_choice == "new")
         {
             new_person();
         }
-        if (user_choice == "s")
+        if (user_choice == "save")
         {
             save();
         }
-        if (user_choice == "l")
+        if (user_choice == "load")
         {
             Load();
+        }
+        if (user_choice == "print")
+        {
+            
+            for (Person p : Array)
+            {
+                if (p.Get_name() == "undefined" && p.Get_telephone() == 0 && p.Get_homephone() == 0 && p.Get_workphone() == 0, p.Get_dop_inf() == "nothing")
+                {
+                    continue;
+                }
+                cout << p.Print() << endl;
+            }
         }
     }
 }
