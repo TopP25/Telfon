@@ -1,4 +1,4 @@
-
+#include "telefon_book.h"
 #include "Person_class.h"
 #include <iostream>
 #include <fstream>
@@ -21,7 +21,15 @@ void new_person()
     cin >> t3;
     cin >> dop_inf_cin;
     Person buf(name1,t1,t2,t3,dop_inf_cin+"| ");
-    Array[index] = buf;
+    
+    for (int in = 0; in <= 100; in++)
+    {
+        if (Array[in].Get_name() == "undefined")
+        {
+            Array[in] = buf;
+            break;
+        }
+    }
     
 
     cout << Array[index].Print() << endl;
@@ -38,9 +46,13 @@ void save()
     cin >> name_of_file;
     ofstream in;////
     in.open(name_of_file);
-    for (int i = 0; i < index; i++)
+    for (Person p : Array)
     {
-        in << Array[i].Print();
+        if (p.Get_name() == "undefined")
+        {
+            continue;
+        }
+        in << p.Print() << endl;
     }
     in.close();
 }
@@ -79,6 +91,24 @@ void Load()
 
     out.close();
 }
+void Delete()
+{
+    string filter{};
+    cin >> filter;
+    for (int in = 0; in <= 100; in++)
+    {
+        if (Array[in].Get_name() == filter)
+        {
+            Array[in] = Person{};
+            break;
+        }
+    }
+    
+}
+void find()
+{
+    
+}
 int main()
 {
     //global Array for storaging person's information
@@ -111,12 +141,16 @@ int main()
             
             for (Person p : Array)
             {
-                if (p.Get_name() == "undefined" && p.Get_telephone() == "" && p.Get_homephone() == "" && p.Get_workphone() == "", p.Get_dop_inf() == "nothing")
+                if (p.Get_name() == "undefined")
                 {
                     continue;
                 }
                 cout << p.Print() << endl;
             }
+        }
+        if (user_choice == "delete")
+        {
+            Delete();
         }
     }
 }

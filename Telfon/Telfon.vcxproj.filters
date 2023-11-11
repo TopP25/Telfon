@@ -23,5 +23,8 @@
     <ClInclude Include="Person_class.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="telefon_book.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
